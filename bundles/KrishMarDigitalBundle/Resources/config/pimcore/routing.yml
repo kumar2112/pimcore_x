@@ -1,0 +1,14 @@
+#krish_mar_digital_homepage:
+#    path:     /krish_mar_digital
+#    defaults: { _controller: KrishMarDigitalBundle\Controller\DefaultController:indexAction }
+
+#KrishMarDigital :
+#    resource: "../bundles/KrishMarDigitalBundle/Controller/"
+#    type: annotation
+    
+krishroute:
+    resource: "@KrishMarDigitalBundle/Controller/Admin/"
+    type:     annotation
+    prefix:   /app
+    
+    

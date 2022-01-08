@@ -1,0 +1,227 @@
+pimcore_data_hub:
+    configurations:
+        products:
+            general:
+                active: true
+                type: graphql
+                name: products
+                description: 'Access the product details'
+                group: ''
+                sqlObjectCondition: ''
+                modificationDate: 1641453796
+                path: null
+                createDate: 1641440418
+            schema:
+                queryEntities:
+                    product:
+                        id: product
+                        name: product
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: sku
+                                        label: SKU
+                                        dataType: input
+                                        layout:
+                                            fieldtype: input
+                                            width: ''
+                                            defaultValue: null
+                                            queryColumnType: varchar
+                                            columnType: varchar
+                                            columnLength: 190
+                                            regex: ''
+                                            unique: true
+                                            showCharCount: false
+                                            name: sku
+                                            title: SKU
+                                            tooltip: ''
+                                            mandatory: false
+                                            noteditable: false
+                                            index: false
+                                            locked: false
+                                            style: ''
+                                            permissions: null
+                                            datatype: data
+                                            relationType: false
+                                            invisible: false
+                                            visibleGridView: false
+                                            visibleSearch: false
+                                            defaultValueGenerator: ''
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: name
+                                        label: 'Product Name'
+                                        dataType: input
+                                        layout:
+                                            fieldtype: input
+                                            width: ''
+                                            defaultValue: null
+                                            queryColumnType: varchar
+                                            columnType: varchar
+                                            columnLength: 190
+                                            regex: ''
+                                            unique: false
+                                            showCharCount: false
+                                            name: name
+                                            title: 'Product Name'
+                                            tooltip: ''
+                                            mandatory: false
+                                            noteditable: false
+                                            index: false
+                                            locked: false
+                                            style: ''
+                                            permissions: null
+                                            datatype: data
+                                            relationType: false
+                                            invisible: false
+                                            visibleGridView: false
+                                            visibleSearch: false
+                                            defaultValueGenerator: ''
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: color
+                                        label: Variant
+                                        dataType: rgbaColor
+                                        layout:
+                                            fieldtype: rgbaColor
+                                            width: ''
+                                            queryColumnType:
+                                                rgb: 'VARCHAR(6) NULL DEFAULT NULL'
+                                                a: 'VARCHAR(2) NULL DEFAULT NULL'
+                                            columnType:
+                                                rgb: 'VARCHAR(6) NULL DEFAULT NULL'
+                                                a: 'VARCHAR(2) NULL DEFAULT NULL'
+                                            name: color
+                                            title: Variant
+                                            tooltip: ''
+                                            mandatory: false
+                                            noteditable: false
+                                            index: false
+                                            locked: false
+                                            style: ''
+                                            permissions: null
+                                            datatype: data
+                                            relationType: false
+                                            invisible: false
+                                            visibleGridView: false
+                                            visibleSearch: false
+                                    isOperator: false
+                mutationEntities:
+                    product:
+                        id: product
+                        name: product
+                        update: true
+                        create: true
+                        columnConfig:
+                            columns:
+                                -
+                                    attributes:
+                                        attribute: sku
+                                        label: SKU
+                                        dataType: input
+                                        layout:
+                                            fieldtype: input
+                                            width: ''
+                                            defaultValue: null
+                                            queryColumnType: varchar
+                                            columnType: varchar
+                                            columnLength: 190
+                                            regex: ''
+                                            unique: true
+                                            showCharCount: false
+                                            name: sku
+                                            title: SKU
+                                            tooltip: ''
+                                            mandatory: false
+                                            noteditable: false
+                                            index: false
+                                            locked: false
+                                            style: ''
+                                            permissions: null
+                                            datatype: data
+                                            relationType: false
+                                            invisible: false
+                                            visibleGridView: true
+                                            visibleSearch: true
+                                            defaultValueGenerator: ''
+                                    isOperator: false
+                                -
+                                    attributes:
+                                        attribute: name
+                                        label: 'Product Name'
+                                        dataType: input
+                                        layout:
+                                            fieldtype: input
+                                            width: ''
+                                            defaultValue: null
+                                            queryColumnType: varchar
+                                            columnType: varchar
+                                            columnLength: 190
+                                            regex: ''
+                                            unique: false
+                                            showCharCount: false
+                                            name: name
+                                            title: 'Product Name'
+                                            tooltip: ''
+                                            mandatory: false
+                                            noteditable: false
+                                            index: false
+                                            locked: false
+                                            style: ''
+                                            permissions: null
+                                            datatype: data
+                                            relationType: false
+                                            invisible: false
+                                            visibleGridView: true
+                                            visibleSearch: true
+                                            defaultValueGenerator: ''
+                                    isOperator: false
+                specialEntities:
+                    document:
+                        read: true
+                        create: true
+                        update: false
+                        delete: false
+                    document_folder:
+                        read: true
+                        create: false
+                        update: false
+                        delete: false
+                    asset:
+                        read: true
+                        create: true
+                        update: false
+                        delete: false
+                    asset_folder:
+                        read: true
+                        create: true
+                        update: false
+                        delete: false
+                    asset_listing:
+                        read: true
+                        create: true
+                        update: false
+                        delete: false
+                    object_folder:
+                        read: true
+                        create: true
+                        update: false
+                        delete: false
+            security:
+                method: datahub_apikey
+                apikey: 8272898fea6636cc014c0615740d9ceb
+                skipPermissionCheck: false
+            workspaces:
+                asset: {  }
+                document: {  }
+                object:
+                    -
+                        read: true
+                        cpath: /
+                        create: false
+                        update: false
+                        delete: false
+                        id: extModel4920-1

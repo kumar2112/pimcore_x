@@ -1,0 +1,5 @@
+## YAML Template.
+---
+twig:
+    paths:
+        '%kernel.project_dir%/bundles/KrishMarDigitalBundle/Resources/views': KrishMarDigitalBundle

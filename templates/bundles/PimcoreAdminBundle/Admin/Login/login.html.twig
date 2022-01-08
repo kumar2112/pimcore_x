@@ -1,0 +1,188 @@
+{% extends '@PimcoreAdmin/Admin/Login/layout.html.twig' %}
+
+{% block content %}
+{#<div id="loginform">
+    <form id="form-element" method="post" action="{{ path('pimcore_admin_login_check', {'perspective' : app.request.get('perspective')|striptags}) }}">
+
+        {% if error is defined %}
+        <div class="text error">
+            {{ error|trans([],'admin')|raw }}
+        </div>
+        {% endif %}
+
+        <input type="text" name="username" autocomplete="username" placeholder="{{ 'username'|trans([], 'admin') }}" required autofocus>
+        <input type="password" name="password" autocomplete="current-password" placeholder="{{ 'password'|trans([], 'admin') }}" required>
+        <input type="hidden" name="csrfToken" id="csrfToken" value="{{ pimcore_csrf.getCsrfToken() }}">
+
+        <button type="submit">{{ 'login'|trans([], 'admin') }}</button>
+    </form>
+
+    <a href="{{ path('pimcore_admin_login_lostpassword') }}" class="lostpassword">{{ 'Forgot your password'|trans([], 'admin') }}?</a>#}
+</div>
+<!--begin::Body-->
+    <div class="d-flex flex-column flex-lg-row-fluid py-10">
+            <!--begin::Content-->
+            <div class="d-flex flex-center flex-column flex-column-fluid">
+                    <!--begin::Wrapper-->
+                    <div class="w-lg-600px p-10 p-lg-15 mx-auto">
+                            <!--begin::Form-->
+                            <form class="form w-100"  id="form-element" method="post" action="{{ path('pimcore_admin_login_check', {'perspective' : app.request.get('perspective')|striptags}) }}">
+                                    <!--begin::Heading-->
+                                    <div class="mb-10 text-center">
+                                            <!--begin::Title-->
+                                            <h1 class="text-dark mb-3">Login</h1>
+                                            <!--end::Title-->
+                                    </div>
+                                    <!--end::Heading-->
+                                    {% if error is defined %}
+                                    <div class="text error">
+                                        {{ error|trans([],'admin')|raw }}
+                                    </div>
+                                    {% endif %}
+                                    <!--begin::Input group-->
+                                    <div class="fv-row mb-7">
+                                        <label class="form-label fw-bolder text-dark fs-6">Email</label>
+                                        <input class="form-control form-control-lg form-control-solid"  type="text" name="username" autocomplete="username" placeholder="{{ 'username'|trans([], 'admin') }}" required autofocus />
+                                    </div>
+                                    <!--end::Input group-->
+                                    <!--begin::Input group-->
+                                    <div class="mb-10 fv-row" data-kt-password-meter="true">
+                                            <!--begin::Wrapper-->
+                                            <div class="mb-1">
+                                                    <!--begin::Label-->
+                                                    <label class="form-label fw-bolder text-dark fs-6">Password</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input wrapper-->
+                                                    <div class="position-relative mb-3">
+                                                            <input class="form-control form-control-lg form-control-solid" name="password" autocomplete="current-password" placeholder="{{ 'password'|trans([], 'admin') }}" required />
+                                                            <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                                                                    <i class="bi bi-eye-slash fs-2"></i>
+                                                                    <i class="bi bi-eye fs-2 d-none"></i>
+                                                            </span>
+                                                             <input type="hidden" name="csrfToken" id="csrfToken" value="{{ pimcore_csrf.getCsrfToken() }}">
+                                                    </div>
+                                                    <!--end::Input wrapper-->
+                                                    <!--begin::Meter-->
+                                                    <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
+                                                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+                                                    </div>
+                                                    <!--end::Meter-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                            <!--begin::Hint-->
+                                            <div class="text-muted">Use 8 or more characters with a mix of letters, numbers &amp; symbols.</div>
+                                            <!--end::Hint-->
+                                    </div>
+
+                                    <!--end::Input group-->
+                                    <!--begin::Actions-->
+                                    <div class="text-center">
+                                            <button type="submit" id="kt_sign_up_submit" class="btn btn-lg btn-primary" >
+                                                    <span class="indicator-label">{{ 'login'|trans([], 'admin') }}</span>
+                                                    <span class="indicator-progress">Please wait...
+                                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                            </button>
+                                    </div>
+                                    <!--end::Actions-->
+                            </form>
+                            <!--end::Form-->
+                    </div>
+                    <!--end::Wrapper-->
+            </div>
+            <!--end::Content-->
+            <!--begin::Footer-->
+            <div class="d-flex flex-center flex-wrap fs-6 p-5 pb-0">
+                    <!--begin::Links-->
+                    <div class="d-flex flex-center fw-bold fs-6">
+                            <a href="https://keenthemes.com" class="text-muted text-hover-primary px-2" target="_blank">About</a>
+                            <a href="https://keenthemes.com/support" class="text-muted text-hover-primary px-2" target="_blank">Support</a>
+                            <a href="https://1.envato.market/EA4JP" class="text-muted text-hover-primary px-2" target="_blank">Purchase</a>
+                    </div>
+                    <!--end::Links-->
+            </div>
+            <!--end::Footer-->
+    </div>
+    <!--end::Body-->
+
+{% if not browserSupported %}
+<div id="browserinfo">
+    <div class="text">
+        {{ 'Your browser is not supported. Please install the latest version of one of the following browsers.'|trans([], 'admin') }}
+    </div>
+
+    <div class="text browserinfo">
+        <a href="https://www.google.com/chrome" target="_blank" rel="noopener noreferrer" title="Chrome"><img src="/bundles/pimcoreadmin/img/login/chrome.svg" alt="Chrome"/></a>
+        <a href="https://www.mozilla.org/firefox" target="_blank" rel="noopener noreferrer" title="Firefox"><img src="/bundles/pimcoreadmin/img/login/firefox.svg" alt="Firefox"/></a>
+        <a href="https://www.apple.com/safari" target="_blank" rel="noopener noreferrer" title="Safari"><img src="/bundles/pimcoreadmin/img/login/safari.svg" alt="Safari"/></a>
+        <a href="https://www.microsoft.com/edge" target="_blank" rel="noopener noreferrer" title="Edge"><img src="/bundles/pimcoreadmin/img/login/edge.svg" alt="Edge"/></a>
+    </div>
+
+    <a href="#" onclick="showLogin();">{{ 'Click here to proceed'|trans([], 'admin') }}</a>
+</div>
+
+<script type="text/javascript">
+    function showLogin() {
+        document.getElementById('loginform').style.display = 'block';
+        document.getElementById('browserinfo').style.display = 'none';
+    }
+</script>
+<style type="text/css">
+    #loginform {
+        display: none;
+    }
+</style>
+{% endif %}
+{% endblock %}
+
+{% block below_footer %}
+<script>
+    {% if deeplink is not defined %}
+    // clear opened tabs store
+    localStorage.removeItem("pimcore_opentabs");
+    {% endif %}
+
+    // hide symfony toolbar by default
+    var symfonyToolbarKey = 'symfony/profiler/toolbar/displayState';
+    if(!window.localStorage.getItem(symfonyToolbarKey)) {
+        window.localStorage.setItem(symfonyToolbarKey, 'none');
+    }
+
+
+    // CSRF token refresh
+    var formElement = document.getElementById('form-element');
+    var csrfRefreshInProgress = false;
+    function refreshCsrfToken() {
+        csrfRefreshInProgress = true;
+        formElement.style.opacity = '0.3';
+        var request = new XMLHttpRequest();
+        request.open('GET', '{{ path("pimcore_admin_login_csrf_token") }}');
+        request.onload = function () {
+            if (this.status >= 200 && this.status < 400) {
+                var res = JSON.parse(this.response);
+                document.getElementById('csrfToken').setAttribute('value', res['csrfToken']);
+                formElement.style.opacity = '1';
+                csrfRefreshInProgress = false;
+            }
+        };
+        request.send();
+    }
+    document.addEventListener('visibilitychange', function(ev) {
+        if(document.visibilityState === 'visible') {
+            refreshCsrfToken();
+        }
+    });
+    window.setInterval(refreshCsrfToken, {{ csrfTokenRefreshInterval }});
+    formElement.addEventListener("submit", function(evt) {
+        if(csrfRefreshInProgress) {
+            evt.preventDefault();
+        }
+    }, true);
+
+</script>
+
+{{ pimcore_breach_attack_random_content() }}
+
+{% endblock %}
