@@ -10,6 +10,7 @@ Fields Summary:
 - name [input]
 - price [quantityValue]
 - color [rgbaColor]
+- Test [fieldcollections]
 */
 
 
@@ -18,7 +19,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'name' => 'product',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1641441037,
+   'modificationDate' => 1648059565,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -57,11 +58,11 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Fieldcontainer::__set_state(array(
          'fieldtype' => 'fieldcontainer',
-         'layout' => 'hbox',
+         'layout' => 'vbox',
          'fieldLabel' => '',
          'name' => 'BaseDetails',
          'type' => NULL,
-         'region' => NULL,
+         'region' => 'center',
          'title' => NULL,
          'width' => '',
          'height' => '',
@@ -75,7 +76,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'fieldtype' => 'input',
-             'width' => '',
+             'width' => 400,
              'defaultValue' => NULL,
              'columnLength' => 190,
              'regex' => '',
@@ -151,7 +152,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           1 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
              'fieldtype' => 'input',
-             'width' => '',
+             'width' => 400,
              'defaultValue' => NULL,
              'columnLength' => 190,
              'regex' => '',
@@ -227,8 +228,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           2 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\QuantityValue::__set_state(array(
              'fieldtype' => 'quantityValue',
-             'width' => '',
-             'unitWidth' => '',
+             'width' => 299,
+             'unitWidth' => 100,
              'defaultValue' => NULL,
              'defaultUnit' => NULL,
              'validUnits' => 
@@ -306,7 +307,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
           3 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\RgbaColor::__set_state(array(
              'fieldtype' => 'rgbaColor',
-             'width' => '',
+             'width' => 500,
              'name' => 'color',
              'title' => 'Variant',
              'tooltip' => '',
@@ -321,6 +322,86 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'invisible' => false,
              'visibleGridView' => true,
              'visibleSearch' => true,
+             'forbiddenNames' => 
+            array (
+              0 => 'id',
+              1 => 'key',
+              2 => 'path',
+              3 => 'type',
+              4 => 'index',
+              5 => 'classname',
+              6 => 'creationdate',
+              7 => 'userowner',
+              8 => 'value',
+              9 => 'class',
+              10 => 'list',
+              11 => 'fullpath',
+              12 => 'childs',
+              13 => 'values',
+              14 => 'cachetag',
+              15 => 'cachetags',
+              16 => 'parent',
+              17 => 'published',
+              18 => 'valuefromparent',
+              19 => 'userpermissions',
+              20 => 'dependencies',
+              21 => 'modificationdate',
+              22 => 'usermodification',
+              23 => 'byid',
+              24 => 'bypath',
+              25 => 'data',
+              26 => 'versions',
+              27 => 'properties',
+              28 => 'permissions',
+              29 => 'permissionsforuser',
+              30 => 'childamount',
+              31 => 'apipluginbroker',
+              32 => 'resource',
+              33 => 'parentClass',
+              34 => 'definition',
+              35 => 'locked',
+              36 => 'language',
+              37 => 'omitmandatorycheck',
+              38 => 'idpath',
+              39 => 'object',
+              40 => 'fieldname',
+              41 => 'property',
+              42 => 'parentid',
+              43 => 'children',
+              44 => 'scheduledtasks',
+            ),
+             'blockedVarsForExport' => 
+            array (
+            ),
+          )),
+          4 => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\Fieldcollections::__set_state(array(
+             'fieldtype' => 'fieldcollections',
+             'allowedTypes' => 
+            array (
+              0 => 'multiplrpromo',
+            ),
+             'lazyLoading' => true,
+             'maxItems' => 12,
+             'disallowAddRemove' => true,
+             'disallowReorder' => true,
+             'collapsed' => false,
+             'collapsible' => false,
+             'border' => false,
+             'name' => 'Test',
+             'title' => 'Test',
+             'tooltip' => '',
+             'mandatory' => false,
+             'noteditable' => false,
+             'index' => false,
+             'locked' => NULL,
+             'style' => 'width:400px',
+             'permissions' => NULL,
+             'datatype' => 'data',
+             'relationType' => false,
+             'invisible' => false,
+             'visibleGridView' => false,
+             'visibleSearch' => false,
              'forbiddenNames' => 
             array (
               0 => 'id',

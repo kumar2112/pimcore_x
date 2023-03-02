@@ -1,0 +1,8 @@
+{% if object %}
+<img src="{{asset('static/img/tm-img-310x180-2.jpg')}}" alt="Image" class="tm-margin-b-20 img-fluid">
+<h4 class="tm-margin-b-20 tm-gold-text">{{ object.getBlogTitle() }}</h4>
+<p class="tm-margin-b-20">Aenean cursus tellus mauris, quis
+consequat mauris dapibus id. Donec
+scelerisque porttitor pharetra</p>
+<a href="{{path('blog',{'blog_title' : object.getBlogTitle() })}}" class="tm-btn text-uppercase">Read More</a>   
+ {% endif %}
